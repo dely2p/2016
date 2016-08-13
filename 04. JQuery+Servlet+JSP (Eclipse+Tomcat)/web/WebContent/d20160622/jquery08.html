@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input[value='보이기']").on("click",function(){
+			$("img").fadeIn(2000);
+		});
+		
+		$("input[value='숨기기']").on("click",function(){
+			$("img").hide();
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="보이기"/>
+	<input type="button" value="숨기기"/>
+	<br>
+	<img src="../images/sjg.jpg" alt="송중기"/>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function checkValue(obj){
+			console.dir(obj);
+			var id = obj.id.value;
+			var pw = obj.pw.value;
+			var repw = obj.repw.value;
+			var email = obj.email.value;
+
+			console.log("id : "+id+" pw : "+pw+" repw : "+repw+" email : "+email);
+
+			if(id==""){
+				alert("아이디를 입력하세요");
+				obj.id.focus();
+				return;
+			}
+			if(pw==""){
+				alert("비밀번호를 입력하세요");
+				obj.pw.focus();
+				return;
+			}
+			if(repw==""){
+				alert("비밀번호를 재입력하세요");
+				obj.repw.focus();
+				return;
+			}
+			if(email==""){
+				alert("이메일을 입력하세요");
+				obj.email.focus();
+				return;
+			}
+			if(pw!=repw){
+				alert("두개의 패스워드가 동일해야 합니다.");
+				obj.pw.value = "";
+				obj.repw.value = "";
+				obj.pw.focus();
+				return;
+			}
+			if(email.indexOf('@')==-1){
+				alert("이메일을 올바른 형식으로 입력하세요");
+				obj.email.focus();
+				return;
+			}
+			// 페이지 이동
+			obj.action = "next.html"; // 값을 가지고 다음 페이지로 전달
+			obj.method="get";
+			obj.submit();
+			//location.href = "next.html"; // 무조건 넘어감
+		}
+
+
+
+	</script>
+	<style type="text/css">
+		table {
+			border-radius: 25px;
+			border: 3px dotted hotpink;
+			margin: 10px auto ;
+			padding: 20px;
+		}
+	
+		#btn {			
+			border-radius: 25px;
+			background-color: white;
+			margin: 20px;
+			width: 100px;
+			height: 30px;
+		}
+		/* input[type!='button']{
+			width: 200px;
+		} */
+
+	</style>
+</head>
+<body>
+	<form action="next.html" name="frm">
+		<!-- table>(tr>th+td)*5 -->
+		<table>
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="id" id=""></td>
+			</tr>
+			<tr>
+				<th>패스워드</th>
+				<td><input type="password" name="pw" id=""></td>
+			</tr>
+			<tr>
+				<th>패스워드확인</th>
+				<td><input type="password" name="repw" id=""></td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td><input type="text" name="email" id=""></td>
+			</tr>
+			<tr>
+				<th></th>
+				<td colspan="2">
+					<!-- <input type="submit" value="가입"> -->
+					<input type="button" value="회원가입 " id="btn" onclick="checkValue(this.form);">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

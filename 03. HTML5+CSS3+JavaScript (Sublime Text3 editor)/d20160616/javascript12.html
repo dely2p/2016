@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*var a = 10;
+		//alert("a : "+a);
+		console.log(a);*/
+	// 배열 사용
+	//int[] a = new int[3];
+	var a = new Array(3);
+	a[0] = 1;
+	a[1] = 2;
+	a[2] = 3;
+
+	// 화면에 출력
+	for(var i=0;i<a.length;i++)
+		console.log(a[i]);
+
+	console.log(a);
+	console.dir(a);
+
+	console.log(a.join(" & "));
+
+	//배열을 뒤집어서 출력
+	console.log(a.reverse());
+
+	//슬라이싱
+	var b = a.slice(0,2)
+	console.log(b); // 0번째부터 2번째 전까지
+
+	//b:[3,2]	a:[3,2,1]
+	console.log(b.concat(a)); 
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

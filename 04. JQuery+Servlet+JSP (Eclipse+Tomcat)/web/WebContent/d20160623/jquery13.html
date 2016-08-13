@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title><script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+	
+	$(function(){		
+		var $div = $("div");
+		$("#btn1").on("click",function(){
+			$div.slideDown(1000);
+		});
+		$("#btn2").on("click",function(){
+			$div.slideUp(1000);
+		});
+		$("#btn3").on("click",function(){
+			$div.slideToggle(1000);
+		});
+		$("#btn4").on("click",function(){
+			$div.slideToggle(1000,function(){
+				alert("작업이 끝난 후에 경고창 띄우기");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="슬라이드다운">
+	<input type="button" id="btn2" value="슬라이드업">
+	<input type="button" id="btn3" value="슬라이드 토글">
+	<input type="button" id="btn4" value="토글 alert">
+	<div>
+		<img alt="송중기" src="../images/sjg.jpg">
+	</div>
+	
+</body>
+</html>

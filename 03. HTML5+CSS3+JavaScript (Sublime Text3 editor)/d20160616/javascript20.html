@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function getNowHour(){
+			var now = new Date();	
+			var year = now.getYear()+1990;
+			var month = now.getMonth()+1;
+			var day = now.getDate();	
+			var hour = now.getHours();
+			var min = now.getMinutes();
+			var sec = now.getSeconds();
+
+			console.log(year+"년 "+month+"월 "+day+"일 "+hour+" : "+min+" : "+sec);
+
+			var nowhour = document.getElementById("data");
+			console.dir(nowhour);
+			nowhour.value = hour+" : "+min+" : "+sec;
+
+			//window.setTimeout(함수명, 실행시간);
+			window.setTimeout(getNowHour,1000);
+		}
+	</script>
+</head>
+<body onload="getNowHour()">
+	<input type="text" name="" id="data">
+	<!-- 실행시 현재 시간을 출력 -->
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function checkMenu(){
+			/*console.log(document);
+			console.dir(document.frm[0].checked);*/
+			if(document.frm[0].checked)
+				console.log("한식");
+			else if(document.frm[1].checked)
+				console.log("분식");
+			else if(document.frm[2].checked)
+				console.log("양식");
+			else if(document.frm[3].checked)
+				console.log("중식");
+			else if(document.frm[4].checked)
+				console.log("일식");
+
+		}
+	</script>
+</head>
+<body>
+<!-- 	라디오버튼 5개를 생성 : 점심메뉴명 지정
+
+버튼 클릭시 해당 메뉴를 콘솔에 출력
+ -->
+	<h1>점심 메뉴 고르기</h1>
+	<form name="frm">
+
+	<input type="radio" name="menu" id="">한식
+	<input type="radio" name="menu" id="">분식
+	<input type="radio" name="menu" id="">양식
+	<input type="radio" name="menu" id="">중식
+	<input type="radio" name="menu" id="">일식
+	<input type="button" value="메뉴결정" onclick="checkMenu();">
+	</form>
+</body>
+</html>

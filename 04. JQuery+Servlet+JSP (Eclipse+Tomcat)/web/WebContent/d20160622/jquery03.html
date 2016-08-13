@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+	/* h3글자의 배경색을 노랑색으로 변경 */
+	/* window.onload = function(){
+		var h = document.getElementById("msg");
+		h.style.color = "yellow";
+	} */
+	/* $(익명함수); */
+	$(function(){
+		/* $("h3").css("color","yellow");
+		$("h3").css("background","#00ff00"); */
+		/* $("h3").css("color","yellow")
+			.css("background","#00ff00"); */
+			$("h3").css({"color":"yellow","background-color":"blue"});	
+			$("img").css({"width":"500px","height":"500px"});
+	});
+	
+</script>
+</head>
+<body>
+	<h3 id="msg">제이쿼리 테스트</h3>
+	<div><img alt="송중기" src="../images/sjg.jpg"></div>
+</body>
+</html>

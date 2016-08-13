@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>다양한 입력표현</title>
+</head>
+<body>
+	<h2>다양한 입력표현</h2>	
+	<form action="next.html" method="post">
+	<!-- get : 주소창에 내용을 전달(255이하로 글자 제한) / post : 값을 전달하지만 body태그 안에 감춰서 전달(글자 제한 없음) -->
+		<input type="text" name="id"></br>
+		<input type="password" name="pw" id=""></br>
+		<input type="checkbox" name="quest1" id="">1번</br>
+		<input type="checkbox" name="quest2" id="">2번</br>
+		<input type="radio" name="gender" id="">남 </br> <!-- 	name이 같으면 둘 중 하나 선택하는 것으로 가능 -->
+		<input type="radio" name="gender" id="">여</br>
+		<input type="date" name="day"></br> <!-- 익스플로러에서는 달력 안뜸 (ms에서는 호환 안됨) -->
+
+		<input type="submit" value="로그인">
+		<input type="reset" value="reset">
+	</form>
+</body>
+</html>

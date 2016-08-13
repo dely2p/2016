@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+/* a 태그의 글자색을 노랑색, 배경색을 빨강색 */
+	$(function(){
+		/*$("a").css("color","yellow").css("background-color","red");*/
+		
+		/* JSON으로 */
+		/*$("a").css({"color":"yellow"}).css({"background-color":"red"});*/
+		
+		/* 네이버만 */
+		/* $(".naver").css({"color":"yellow"}).css({"background-color":"red"}); */	
+	
+		/* 속성 타겟이 있는 태그만 */
+		/* $("a[target]").css({"color":"yellow"}).css({"background-color":"red"}); */
+		
+		/* 속성 타겟의 값이 _blank인 태그만 */
+		$("a[target!='_blank']").css({"color":"yellow"}).css({"background-color":"red"});
+	});
+</script>
+</head>
+<body>
+
+	<a class="naver" href="http://www.naver.com">네이버</a>
+	<a href="http://www.daum.net">다음</a>
+	<a class="naver" href="http://www.naver.com" target="_blank">네이버</a>
+	<a href="http://www.daum.net" target="_blank">다음</a>
+</body>
+</html>

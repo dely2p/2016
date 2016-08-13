@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function prt(){
+			var txt1 = document.getElementById("txt1");
+			var txt2 = document.getElementById("txt2");
+			console.log("txt1 : "+ txt1.value+" txt2 : "+txt2.value);
+			var txt3 = document.getElementById("txt3");
+
+			// 숫자로 형변환하기 
+			//txt3.value = eval(txt1.value)+eval(txt2.value);
+			//txt3.value = eval(txt1.value+"+"+txt2.value);
+			txt3.value = parseInt(txt1.value)+parseInt(txt2.value);
+		}
+	</script>
+</head>
+<body>
+<input type="text" name="" id="txt1">
++
+<input type="text" name="" id="txt2">
+<input type="button" name="" value="=" onclick="prt();">
+<input type="text" name="" id="txt3">
+	
+</body>
+</html>

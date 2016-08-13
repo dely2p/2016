@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/* 선택자 { 속성 : 값; 속성 : 값; } */
+		h1 {
+			color: red;
+		}
+		* { /* 모든요소 효과줄 때 */
+			color: blue;
+			font-size: 20px;
+			font-family: "Nanum Gothic","궁서체","sans-serif"; /* 순서대로 있으면 폰트 설정 없으면 다음 폰트로 설정 */
+		}
+		p {
+			color: green;
+		}
+		#color_red {
+			color:red;
+		}
+		.color_blue {
+			color:blue;
+		}
+		#nav {
+			list-style-type: lower-roman; /* 로마자 */
+		}
+	</style>
+</head>
+<body>
+	<h1>type선택자</h1>
+	<p>HTML의 모든 요소는 선택자로 사용가능</p>
+	<p id="color_red">HTML의 모든 요소는 선택자로 사용가능</p>
+	<p class="color_blue" ="color_blue">HTML의 모든 요소는 선택자로 사용가능</p>
+
+	<ol id="nav">
+		<li>하나</li>
+		<li>둘</li>
+		<li>세엣</li>
+	</ol>
+</body>
+</html>

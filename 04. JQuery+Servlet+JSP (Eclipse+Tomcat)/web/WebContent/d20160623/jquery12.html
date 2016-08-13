@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+	/* $(document).ready(익명함수); */
+	$(function(){
+		$("input:button").on("click",function(){
+			console.log("버튼눌림");
+			
+			/* var txt1 = document.getElementById("txt1); 
+			var txt1 = document.getElementById("txt1); 
+			txt2.value = txt1.value; */
+			
+			//console.log($("#txt1").val());
+			
+			$("#txt2").val($("#txt1").val());
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" name="txt1" id="txt1">
+	<input type="button" value="아래로복사">
+	<br>
+	<hr color="blue" />
+	<input type="text" name="txt2" id="txt2">
+</body>
+</html>

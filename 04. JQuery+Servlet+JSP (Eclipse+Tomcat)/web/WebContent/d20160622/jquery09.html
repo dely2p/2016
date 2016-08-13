@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+	var pos=0;	
+	$(function(){
+		$("input").on("click",function(){
+			setInterval(autoMove, 300);
+		});
+	});
+	function autoMove(){
+		$("img").css("marginLeft", pos+"px");
+		pos += 10;
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="달료~~"/>
+	<div>
+		<img src="../images/rabbit1.png" alt="토끼1"/>
+		<img src="../images/rabbit2.png" alt="토끼2"/>
+	</div>
+</body>
+</html>

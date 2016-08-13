@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#id1").on("click",function(){
+			$("#answer").show();
+			$("#wrong").hide();
+		});
+		$("#id2,#id3,#id4").on("click",function(){
+			$("#answer").hide();
+			$("#wrong").show();
+		});
+	});
+</script>
+</head>
+<body>
+	<input id="id1" type="button" value="1번" />
+	<input id="id2" type="button" value="2번" />
+	<input id="id3" type="button" value="3번" />
+	<input id="id4" type="button" value="4번" />
+	
+	<div id="q">
+		<div>7월 7일날 만나는 커플</div>
+	</div>
+	<div>
+		1. 견우와 직녀
+		2. 권민석과 허민석
+		3. 민석*2
+		4. 박보영과 이청우
+	</div>
+	<div id="answer" style="display:none">
+		<p>정답: 4번 박보영과 이청우</p>
+	</div>
+	<div id="wrong" style="display:none">
+		<p><img src="../images/no.jpg" alt="땡"/></p>
+	</div>
+</body>
+</html>

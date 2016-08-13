@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+	
+	$(function(){		
+	
+		$("img").css("height","200px").css("width","200px");
+		$("#txt1").val("곰돌이인형");
+		$("#txt2").val("50000");
+		$("#btn").on("click",function(){
+			console.log($("#txt2").val());
+			var price = Number($("#txt2").val());
+			price*=0.9;
+			Math.floor(price);
+			console.log(price);
+			$("#txt2").val(price);
+		});
+	});
+</script>
+</head>
+<body>
+	<img alt="곰돌이인형" src="../images/gom.jpg"><br>
+	<input type="text" id="txt1"><br>
+	<input type="text" id="txt2"><br>
+	<input type="button" value="할인해줘~~" id="btn"><br>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		canvas {
+			background-color: #eeeeee;
+		}
+	</style>
+	<script type="text/javascript">
+		var ctx;
+		var count = 0;
+		// 우주배경 이미지 객체
+		var bgImg1 = new Image();
+		var bgImg2 = new Image();
+		// 배경 이미지 소스
+		bgImg1.src = "../images/space.jpg";
+		bgImg2.src = "../images/space.jpg";
+		var bgY1 = 0;
+		var bgY2 = -600;
+		// 비행기 이미지 객체
+		var ship1 = new Image();
+		var ship2 = new Image();
+		var ship3 = new Image();
+		var ship4 = new Image();
+		// 소스
+		ship1.src = "../images/gunship4.png";
+		ship2.src = "../images/gunship5.png";
+		ship3.src = "../images/gunship6.png";
+		ship4.src = "../images/gunship7.png";
+		// 비행기 좌표 변수
+		var shipX = 250;
+		var shipY = 500;
+
+		function moveShip(e){
+			console.log("비행기 움직이기");
+			var key = e.keyCode;
+			if(key==37)
+				shipX -= 2;
+			else if(key==38)
+				shipY -= 2;
+			else if(key==39)
+				shipX += 2;
+			else if(key==40)
+				shipY += 2;
+
+		}
+		window.onload = function(){ // play game
+			var canvas = document.getElementById("myCanvas");
+			ctx = canvas.getContext("2d");
+
+			document.body.onkeydown = moveShip;
+
+			setInterval(drawScreen,50);
+		}
+		function drawScreen(){
+			count++;							
+			bgY1+=2;
+			bgY2+=2;
+
+			// ctx.drawImage(이미지객체, x, y, 너비, 높이);
+			ctx.drawImage(bgImg1, 0, bgY1, 400, 600);
+			ctx.drawImage(bgImg2, 0, bgY2, 400, 600);
+			if(bgY1>=600)
+				bgY1 = -600;
+			if(bgY2>=600)
+				bgY2 = -600;
+			// 비행기 그리기
+			if(count%4==0)
+				ctx.drawImage(ship1, shipX, shipY, 50, 50);
+			else if(count%4==1)
+				ctx.drawImage(ship2, shipX, shipY, 50, 50);
+			else if(count%4==2)
+				ctx.drawImage(ship3, shipX, shipY, 50, 50);
+			else if(count%4==3)
+				ctx.drawImage(ship4, shipX, shipY, 50, 50);
+		}
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="400" height="600"></canvas>
+</body>
+</html>

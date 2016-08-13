@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// person : 객체를 생성하고
+		// name : 전효성
+		// age : 28
+		// job : 가수
+		var person = {}
+		person.name = "전효성";
+		person.age = 28;
+		person.job = "가수";
+		person.gender = "여";
+		console.log(person);
+
+		var  person2 = {
+			name: "오하윤",
+			age: 15,
+			job: "가수",
+			gender: "여"
+		}
+		console.log(person2);
+
+		var yjw = {
+			name: "양정원",
+			age: 28,
+			job: "요가강사",
+			gender: "여"
+			isAdult: isAdult;
+		};
+
+		function isAdult(obj){
+			var result;
+			if(obj.age>18){
+				result = "성인";
+			}else {
+				result = "미성년";
+			}
+			console.log(obj.name+"씨는 "+result+"입니다.");
+		}
+		isAdult(person);
+		isAdult(person2);
+		yjw.isAdult = isAdult;
+		yjw.isAdult(yjw);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

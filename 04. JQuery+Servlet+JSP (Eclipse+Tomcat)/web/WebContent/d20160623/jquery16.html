@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#btn1").on("click",function(){
+			var data = $("#txt1").val();
+			
+			//$("ol").prepend("<li>"+data+"</li>"); // 리스트 앞에 붙이기
+			$("ol").append("<li>"+data+"</li>"); // 리스트 뒤에 붙이기
+		});
+		$("#btn2").on("click",function(){
+			console.log($("a").attr("href")); // 태그의 값을 가져옴
+			
+			$("a").attr("href","http://www.naver.com");
+		});
+		$("#btn3").on("click",function(){
+			$("img").attr("src","../images/flower.jpg");
+		});
+	});
+
+</script>
+</head>
+<body>
+	<h2>실시간 영화 예매 순위</h2>
+	<ol>
+		<li>정글북</li>
+		<li>특별수사</li>
+		<li>컨저링2</li>
+		<li>아가씨</li>
+		<li>워크래프트</li>
+	</ol>
+	
+	<a href="http://www.daum.net">다음</a>
+	<img alt="박보영" src="../images/sgj.jpg">
+	<br>
+	<input type="text" name="" id="txt1">
+	<input type="button" value="추가" id="btn1">
+	
+	<input type="button" value="속성바꾸기" id="btn2">
+	<input type="button" value="사진 바꾸기" id="btn3">
+</body>
+</html>

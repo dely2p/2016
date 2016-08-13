@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		 function selectStar(){
+
+		 // 	var div1 = document.getElementById("div1");
+		 // 	/*div1.innerHTML = '<h1>하하하<h1>';*/
+		 // 	var menu = document.getElementById("menu");
+		 // 	var data;
+		 // 	if(menu[0].selected){
+		 // 		data = menu[0].innerText;
+		 // 	}
+		 // 	else if(menu[1].selected){
+		 // 		data = menu[1].innerText;
+		 // 	}
+		 // 	else if(menu[2].selected){
+		 // 		data = menu[2].innerText;
+		 // 	}
+		 // 	else if(menu[3].selected){
+		 // 		data = menu[3].innerText;
+		 // 	}
+		 // 	else if(menu[4].selected){
+		 // 		data = menu[4].innerText;
+		 // 	}
+		 // 	console.log(data);
+		 // 	div1.innerHTML =  "<h1>"+data+"<h1>";
+			
+			document.getElementById("div1").innerText = document.getElementById("menu").value;
+		}
+	</script>
+</head>
+<body>
+	<h1>좋아하는 연예인</h1>
+	<form name="frm">
+	<select id="menu" onchange="selectStar()">
+		<option value="이장원">이장원</option>
+		<option value="신재평">신재평</option>
+		<option value="송중기">송중기</option>
+		<option value="강동원">강동원</option>
+		<option value="이광수">이광수</option>
+	</select>
+	</form>
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

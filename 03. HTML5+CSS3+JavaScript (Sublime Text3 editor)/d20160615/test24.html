@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>표 모양내기</title>
+	<style type="text/css">
+		table {
+			width: 100%;
+			border-collapse: collapse; /* 선을 실선으로 바꿔줌 */
+			text-align: center;
+		}
+		table,td,th {
+			border: 1px solid black;			
+		}
+		tr {
+			font-size: 12pt;
+			cursor: pointer; /* 마우스 손가락모양 */
+		}
+		td {
+			height: 24px;
+		}
+		th {
+			height: 30px;
+			font-size: 16px;
+			background-color: #e274cb;
+		}
+		#id {width: 10%;}
+		#pw {width: 10%;}
+		#name {width: 20%;}
+		#email {width: 30%;}
+		#addrs {width: 30%;}
+		tr:hover {
+			color: #ffffff;
+			font-weight: bold; /* 굵은글씨 */
+			background-color: #00ccff;
+		}
+		.odd {
+			background-color: #fff3fd;
+		}
+	</style>
+</head>
+<body>
+	<!-- 5행 5열짜리 표
+	ID PW 이름 이메일 주소
+	너비 800px 중앙정렬 글자 중앙정렬 -->
+	<table>
+		<tr>
+			<th id="id">ID</th>
+			<th id="pw">PW</th>
+			<th id="name">이름</th>
+			<th id="email">이메일</th>
+			<th id="addrs">주소</th>
+		</tr>
+		<tr>
+			<td>id1</td>
+			<td>aaa</td>
+			<td>캡틴아메리카</td>
+			<td>cap@gmail.com</td>
+			<td>미국</td>
+		</tr>
+		<tr class="odd">
+			<td>id2</td>
+			<td>bbb</td>
+			<td>토르</td>
+			<td>thur@gmail.com</td>
+			<td>아스가르드</td>
+		</tr>
+		<tr>
+			<td>id3</td>
+			<td>ccc</td>
+			<td>아이언맨</td>
+			<td>ironman@gmail.com</td>
+			<td>절벽위</td>
+		</tr>
+		<tr class="odd">
+			<td>id4</td>
+			<td>ddd</td>
+			<td>헐크</td>
+			<td>hulk@gmail.com</td>
+			<td>거주지 미상</td>
+		</tr>
+	</table>
+</body>
+</html>

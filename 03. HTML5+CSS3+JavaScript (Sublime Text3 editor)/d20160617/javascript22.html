@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var msg = []; // 배열선언-자동증가(arraylist)
+		function saveData(){
+			var text1 = document.getElementById("txt1");
+			msg.push(text1.value);
+			console.log(msg);
+			text1.value = "";
+			text1.focus();
+		}
+		function prtData(){
+			/*for(var i=0;i<msg.length;i++){
+				console.log(msg[i]);
+			}*/
+		var div = document.getElementById("txt2");
+		console.dir(div);
+		var data = "<ul>";
+		for(var i=0;i<msg.length;i++){
+			data += "<li>"+msg[i]+"</li>";
+		}
+		data += "</ul>";
+
+		//div.innerText = '쉬는시간';
+		div.innerHTML = data;
+		}
+	</script>
+</head>
+<body>
+	<input type="txt" name="" id="txt1">
+	<input type="button" value="저장" onclick="saveData();">
+	<input type="button" value="출력" onclick="prtData();">
+
+	<div id="txt2">
+		<h1>대한민국만세!!</h1>
+	</div>
+</body>
+</html>

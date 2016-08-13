@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/* $("input") : input엘리먼트 객체를 jquery 객체화 시킨것
+		$("input")[0]
+		var input = document.getElementById("btn");
+		두개는 동일함
+		*/
+		$("input[value='뚱뚱하게 하기']").on("click", function(){
+			$("img").css("width","400px").css("height","200px");
+		}); 
+		$("input[value='날씬하게 하기']").on("click", function(){
+			$("img").css("width","100px").css("height","200px");
+		}); 
+	});
+	/* function fat(){
+		$("img").css("width","400px").css("height","200px");
+	}
+	function thin(){
+		$("img").css("width","100px").css("height","200px");
+	} */
+</script>
+</head>
+<body>
+<img alt="토끼" src="../images/rabbit1.png"><br>
+
+<input type="button" value="뚱뚱하게 하기"></button>
+<input type="button" value="날씬하게 하기"></button>
+</body>
+</html>

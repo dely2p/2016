@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		img{width: 200px; height: 200px}
+	</style>
+	<script type="text/javascript">
+		function overImg(){
+			console.log("푸하하하하");
+			var photo = document.getElementById("photo");
+				photo.src="../image/de02.jpg"
+		}
+		function outImg(){
+			console.log("푸하하하하");
+			var photo = document.getElementById("photo");
+				photo.src="../image/de01.jpg"
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<img src="../image/de01.jpg" id="photo" alt="대박이" onmouseover="overImg();" onmouseout="outImg();">
+	</div>
+	
+</body>
+</html>

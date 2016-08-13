@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var site = Array(10);
+		site[0] = "michyeora.com";
+		site[1] = "www.seoldeok.com";
+		site[2] = "www.cherrykoko.com";
+		site[3] = "www.secretlabel.co.kr";
+		site[4] = "darllyshop.co.kr";
+		site[5] = "www.aliceribbon.tv";
+		site[6] = "www.yubsshop.com";
+		site[7] = "www.merongshop.com";
+		site[8] = "www.gae-ideuk.com/";
+		site[9] = "www.dahong.co.kr";
+
+		function rndSite(){
+			var num = Math.floor(Math.random()*10);
+			console.log("http://"+site[num]);
+			location.href = "http://"+site[num];
+		}
+
+
+	</script>
+</head>
+<body>
+	<input type="button" value="랜덤사이트" onclick="rndSite();">
+</body>
+</html>

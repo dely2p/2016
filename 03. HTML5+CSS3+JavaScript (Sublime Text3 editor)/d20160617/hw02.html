@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var context;
+
+		window.onload = function (){
+			var canvas = document.getElementById("myCanvas");
+			console.log(canvas);
+			context = canvas.getContext("2d");
+
+			context.beginPath();
+
+			//context.moveTo(0,0);
+		
+			context.fillStyle="green";
+		
+			context.rect(100,100,300,300);
+			context.fillRect(150,170,80,40);
+			context.fillRect(280,170,80,40);
+			context.rect(150,300,200,30);
+			context.rect(150,330,200,30);
+
+
+			context.closePath();	
+			context.strokeStyle = "green";
+
+		// 선그리기
+			context.stroke();
+		}	
+
+
+	</script>
+	<style type="text/css">
+		canvas {
+			background-color: #eeeeee;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+</body>
+</html>
