@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="coffee" class="spring_app2.CoffeeImple">
+		 <property name="type" value="알코올"></property>
+	</bean>
+	<bean id="ameri" class="spring_app2.MachinCoffee">
+		 <property name="type" value="아메리카노"></property>
+	</bean>
+	<!-- 
+		CoffeeImple coffee = new CoffeeImple();
+		coffee.type = "술"
+	 -->
+</beans>
