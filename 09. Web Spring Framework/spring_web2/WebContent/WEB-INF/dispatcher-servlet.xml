@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- HandlerMapping - 어디로 갈지 알려줌(bean이름과 url연결) : BeanNameUrlHandlerMapping -->
+
+	<bean id="beanNameUrlHandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
+	
+<!-- ViewResolver - 무엇을 보여줄지 알려줌(내부자원을 보여줌): InternalResourceViewResolver -->
+	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<bean id="/test.do" class="spring_web2.TestController"></bean>
+	<bean id="/printMsg.do" class="spring_web2.MessageController"></bean>
+</beans>

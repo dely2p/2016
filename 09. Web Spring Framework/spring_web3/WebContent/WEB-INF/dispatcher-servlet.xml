@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Handler Mapping -->
+<bean id="beanNameUrlHandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
+
+	<!-- ViewResolver -->	
+<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/view/"></property><!-- setterDI -->
+	<property name="suffix" value=".jsp"></property>
+</bean>
+
+<bean id="/hi.hdoo" class="kr.co.test.web.HelloController"></bean>
+<bean id="/welcome.hdoo" class="kr.co.test.web.WelcomeController">
+	<property name="name" value="희두몬"></property>
+</bean>
+<bean id="/jpwelcome.hdoo" class="kr.co.test.web.WelcomJPController">
+	<property name="name" value="희두몬"></property>
+</bean>
+
+</beans>
