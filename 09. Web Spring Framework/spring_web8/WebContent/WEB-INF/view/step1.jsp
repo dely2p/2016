@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<title>Document</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(function(){
 		$("input:button").on("click",function(){
 			//alert("버튼");
@@ -18,7 +18,7 @@
 		})
 	})
 
-</script>
+</script> -->
 </head>
 <body>
 	<h2>회원가입</h2>
@@ -30,9 +30,9 @@
 		
 개인정보 냠냠 감사합니다.
 	</textarea>
-	<form action="frm">
+	<form action="step2.do">
 		<input type="checkbox" name="ck" id="agree" value="true" />약관동의
-		<input type="button" id="btn" value="다음" />
+		<input type="submit" id="btn" value="다음" />
 	</form>
 
 </body>
