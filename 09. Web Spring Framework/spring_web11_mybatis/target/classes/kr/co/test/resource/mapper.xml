@@ -6,5 +6,10 @@
  <mapper namespace="kr.co.test.dept">
  	<select id="selectAll" resultType="deptdto">
  		SELECT * FROM dept
+ 		ORDER BY deptno desc
  	</select>
+ 	<insert id="addData" parameterType="deptdto">
+ 		INSERT INTO dept(deptno,dname,loc)
+ 		VALUES (#{deptno},#{dname},#{loc})
+ 	</insert>
  </mapper>

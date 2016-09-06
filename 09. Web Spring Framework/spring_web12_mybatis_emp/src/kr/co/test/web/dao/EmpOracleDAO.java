@@ -23,4 +23,12 @@ public class EmpOracleDAO implements Dao{
 	
 		return ss.selectList("kr.co.test.emp.selectAll");
 	}
+
+
+
+	@Override
+	public void add(EmpDTO dto) {
+		ss.insert("kr.co.test.emp.addData", dto);
+		
+	}
 }

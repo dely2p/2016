@@ -6,5 +6,10 @@
  <mapper namespace="kr.co.test.emp">
  	<select id="selectAll" resultType="empdto">
  		SELECT * FROM emp
+ 		ORDER BY empno desc
  	</select>
+ 	<insert id="addData" parameterType="empDto">
+ 		INSERT INTO emp
+ 		VALUES (#{empno},#{ename},#{job},#{mgr},sysdate,#{sal},#{comm},10)
+ 	</insert>
  </mapper>

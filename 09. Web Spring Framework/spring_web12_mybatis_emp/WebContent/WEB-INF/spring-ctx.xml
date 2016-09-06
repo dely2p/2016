@@ -10,4 +10,7 @@
 	<mvc:jsp prefix="/WEB-INF/jsp/" suffix=".jsp"/>
 </mvc:view-resolvers>
 
+<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+
+
 </beans>

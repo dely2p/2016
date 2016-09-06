@@ -13,4 +13,9 @@
 	<mvc:jsp prefix="/WEB-INF/jsp/" suffix=".jsp"/>
 </mvc:view-resolvers>
 
+
+<!-- <mvc:view-controller path="add.do" view-name="insertForm.jsp"/> -->
+<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+
+
 </beans>
