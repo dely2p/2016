@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.moaboa.dao">
+	<select id="selectWebToonAll" parameterType="String" resultType="wdto">
+		SELECT wname, wimage, website, recentlyno, wgenre, imageurl, contenturl
+		FROM webtoon
+		WHERE week = #{week}
+	</select>
+	<select id="selectWebToonNaver" parameterType="String" resultType="wdto">
+		SELECT titleid, recentlyno, wimage
+		FROM webtoon
+		WHERE wname = #{wName}
+	</select>
+	<insert id="insertNaver" parameterType="wdto">
+		INSERT INTO webtoon(wname, wimage, website, recentlyno, wgenre, imageurl, contenturl, week)
+		VALUES(#{wname}, #{wimage}, #{website}, #{recentlyno}, #{wgenre}, #{imageurl}, #{contenturl}, #{week})
+	</insert>
+</mapper>
