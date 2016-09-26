@@ -25,8 +25,13 @@ public class WebToonController {
 		return new ModelAndView("webToonDetail", "webToonDetail", dao.selectWebToon(wName, site));
 	}
 	
-	@RequestMapping(value="transferOk.do",method=RequestMethod.GET)
+	@RequestMapping(value="/transferOk.do",method=RequestMethod.GET)
 	public String transfer(){
 		return "transferOk";
+	}
+	
+	@RequestMapping("/view/poprecorder.do")
+	public String poprecoder(){
+		return "poprecorder";
 	}
 }
