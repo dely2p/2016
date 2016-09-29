@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,13 +27,14 @@ public class FileUploadController {
 	// setter 없어도 method를 알고 있음
 	FileValidator fileValidator;
 
-
+	
 	@RequestMapping(value="/view/upload.do",method=RequestMethod.GET)
 	public String uploadForm(){
+		
 		return "upload/form";
 	}
 	@RequestMapping(value="/view/upload.do", method=RequestMethod.POST)
-	public ModelAndView uploading(@ModelAttribute("uploadFile")UploadFile uploadfile, HttpServletRequest req, BindingResult result){
+	public ModelAndView uploading(@ModelAttribute("uploadFile")UploadFile uploadfile, HttpServletRequest req, HttpServletResponse resp, BindingResult result){
 		//@ModelAttribute("dto")MemberDTO dto : 이 객체를 참조값에 담아라는 뜻으로 두개 다 같은 표현
 		// 업로드한 파일 객체 가져오기
 		// 내부적으로 임의의 경로에 파일을 보관해둔다.
@@ -48,16 +50,15 @@ public class FileUploadController {
 			// 다시 돌아가..
 			return new ModelAndView("/view/upload/form");
 		}
-		
-		
 		// 어디에 저장? 경로
 		HttpSession hs = req.getSession();
 		ServletContext application = hs.getServletContext();
 		//String filepath = application.getRealPath("/WEB-INF/data");
-		String filepath = "//KITCOOP-PC/data";
+		String filepath = "//KITCOOPC2IP061/data";
 		System.out.println("진짜 파일이 저장 될 os경로 : "+filepath);
 		// 파일의 원본이름
 		String fileName = file.getOriginalFilename();
+		System.out.println("filename을 알려줘 : "+fileName);
 		File f = new File(filepath+"/"+fileName);
 		// 임시저장소에 보관한 파일을 저장하고자 하는
 		// 경로에 복사
@@ -71,6 +72,12 @@ public class FileUploadController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		Cookie cookie = new Cookie("filename", filepath+"/"+fileName);
+		cookie.setMaxAge(7*24*60*60);
+		cookie.setPath("/");
+		resp.addCookie(cookie);
+		
 		
 		return new ModelAndView("upload/uploadFile","fileName",f.getName());
 	}

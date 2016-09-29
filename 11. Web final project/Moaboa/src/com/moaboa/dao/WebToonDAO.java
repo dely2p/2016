@@ -14,14 +14,19 @@ public class WebToonDAO implements Dao{
 		this.ss = ss;
 	}
 	@Override
-	public void insertOne(WebToonDTO dto) {
+	public void insertOne(Object dto) {
+		dto = (WebToonDTO)dto;
 		ss.insert("com.moaboa.dao.insertNaver", dto);
 	}
-	@Override
-	public List<WebToonDTO> selectAll(String week) {
+	
+	public List<WebToonDTO> selectWebSite(){
+		return ss.selectList("com.moaboa.dao.selectWebSiteAll");
+	}
+	
+	public List selectAll(String week) {
 		return ss.selectList("com.moaboa.dao.selectWebToonAll", week);
 	}
-	@Override
+
 	public WebToonDTO selectWebToon(String wName, String site) {
 /*		if(site.equals("naver")){
 
@@ -30,6 +35,7 @@ public class WebToonDAO implements Dao{
 		}else{
 			return null;
 		}*/
+		System.out.println(ss);
 		return ss.selectOne("com.moaboa.dao.selectWebToonNaver", wName);
 	}
 }

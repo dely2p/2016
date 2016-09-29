@@ -7,24 +7,52 @@ public class ShowTimeDTO {
 	private String sTime; // 상영시간
 	private String interpark; // 인터파크 url
 	private String theaterName; // 극장명
-	
+	private String mName;
+	private String location;
 	/*Constructor*/
 	public ShowTimeDTO(){}
-	public ShowTimeDTO(int sno, int mno, String sTime, String interpark, String theaterName) {
+	public ShowTimeDTO(int mno, String sTime, String interpark, String theaterName) {
 		super();
-		this.sno = sno;
 		this.mno = mno;
 		this.sTime = sTime;
 		this.interpark = interpark;
 		this.theaterName = theaterName;
 	}
+	public ShowTimeDTO(int mno, String sTime, String interpark, String theaterName, String mName) {
+		super();
+		this.mno = mno;
+		this.sTime = sTime;
+		this.interpark = interpark;
+		this.theaterName = theaterName;
+		this.mName = mName;
+	}
+	public ShowTimeDTO(String location, int mno, String sTime, String interpark, String theaterName) {
+		super();
+		this.mno = mno;
+		this.sTime = sTime;
+		this.interpark = interpark;
+		this.theaterName = theaterName;
+		this.location = location;
+	}
 		
 	/*Get/Set Method*/
+	public String getLocation(){
+		return location;
+	}
+	public void setLocation(){
+		this.location = location;
+	}
 	public int getSno() {
 		return sno;
 	}
 	public void setSno(int sno) {
 		this.sno = sno;
+	}
+	public String getMName() {
+		return mName;
+	}
+	public void setMName(String mName) {
+		this.mName = mName;
 	}
 	public int getMno() {
 		return mno;

@@ -2,21 +2,21 @@ package com.moaboa.dto;
 
 public class MovieDTO {
 	/*Member Variable*/
-	private int mno; // ¿µÈ­ ¹øÈ£
-	private String mName; // ¿µÈ­ Á¦¸ñ
-	private String mImage; // ¿µÈ­ ´ëÇ¥ ÀÌ¹ÌÁö URL
-	private String preView; // ¿¹°íÆí URL
-	private String mGenre; // ¿µÈ­ Àå¸£
-	private String director; // ¿µÈ­ °¨µ¶
-	private String actor; // Ãâ¿¬ ¹è¿ì
-	private String mDate; // °³ºÀ ÀÏÀÚ
+	private int mno; // ï¿½ï¿½È­ ï¿½ï¿½È£
+	private String mName; // ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
+	private String mImage; // ï¿½ï¿½È­ ï¿½ï¿½Ç¥ ï¿½Ì¹ï¿½ï¿½ï¿½ URL
+	private String preView; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ URL
+	private String mGenre; // ï¿½ï¿½È­ ï¿½å¸£
+	private String director; // ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
+	private String actor; // ï¿½â¿¬ ï¿½ï¿½ï¿½
+	private String mDate; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	/*Constructor*/
 	public MovieDTO(){}
-	public MovieDTO(int mno, String mName, String mImage, String preView, String mGenre, String director, String actor,
+	public MovieDTO(String mName, String mImage, String preView, String mGenre, String director, String actor,
 			String mDate) {
 		super();
-		this.mno = mno;
+
 		this.mName = mName;
 		this.mImage = mImage;
 		this.preView = preView;

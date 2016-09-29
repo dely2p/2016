@@ -105,7 +105,12 @@ DEALINGS IN THE SOFTWARE.
     	console.log("url : "+url);
     	var link = document.getElementById("save");
     	link.href = url;
-    	link.download = filename || 'output.wav';	
+    	link.download = filename || 'output.wav';
+    	
+    /*var filepath = "//KITCOOP-PC/data/"+filename;
+    	setCookie('filename', filepath, 1);
+    	localStorage.setItem('filename', filepath);
+     */
        	
     }
 
@@ -158,6 +163,16 @@ var recIndex = 0;
 - "Monitor input" switch
 */
 
+/*function setCookie(cname, cvalue, exdays){
+	var d = new Date();
+	d.setDate(d.getDate() + 1); //1일 뒤 이 시간
+	
+	console.log("cvalue : "+cvalue);
+	
+	var expires = "expires="+d.toGMTString();
+	document.cookie = cname + "=" + cvalue + "; " + expires;
+}*/
+
 function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
     
@@ -199,9 +214,8 @@ function gotBuffers( buffers ) {
 }
 
 function doneEncoding( blob ) {
-    Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
+    Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );   
     recIndex++;
-		
 }
 
 function toggleRecording( e ) {

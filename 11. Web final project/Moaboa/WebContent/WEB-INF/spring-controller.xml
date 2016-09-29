@@ -36,7 +36,24 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactoryBean" />
 	</bean>
+	
 	<bean id="webToonDAO" class="com.moaboa.dao.WebToonDAO">
 		<property name="ss" ref="sqlSessionTemplate" />
 	</bean>
+	<bean id="movieDAO" class="com.moaboa.dao.MovieDAO">
+		<property name="ss" ref="sqlSessionTemplate" />
+	</bean>
+	<bean id="showTimeDAO" class="com.moaboa.dao.ShowTimeDAO">
+		<property name="ss" ref="sqlSessionTemplate" />
+	</bean>
+	<bean id="theaterDAO" class="com.moaboa.dao.TheaterDAO">
+		<property name="ss" ref="sqlSessionTemplate" />
+	</bean>
+	<bean id="DubbingDAO" class="com.moaboa.dao.DubbingDAO">
+		<property name="ss" ref="sqlSessionTemplate" />
+	</bean>	
+	<bean class="com.moaboa.dao.UserInfoDAO" id="UserInfoDAO">
+		<property name="ss" ref="sqlSessionTemplate"/>
+	</bean>
+
 </beans>

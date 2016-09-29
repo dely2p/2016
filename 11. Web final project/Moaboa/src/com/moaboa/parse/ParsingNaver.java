@@ -17,7 +17,7 @@ import com.moaboa.dto.WebToonDTO;
 public class ParsingNaver {
 	
 	public Document getDocument(String url){
-		// Web Page�쓽 Document 媛앹껜瑜� 諛섑솚�븯�뒗 Method
+		// Web Page의 Document 객체를 반환하는 Method
 		Document doc = null;
 		try {
 			doc = Jsoup.connect(url).get();
@@ -29,22 +29,22 @@ public class ParsingNaver {
 	}
 	
 	public Elements getWebToonElements(Document doc){
-		// �빐�떦 Document 媛앹껜 �궡�쓽 �쎒�댆 Elements 媛앹껜瑜� 諛섑솚�븯�뒗 Method
+		// 해당 Document 객체 내의 웹툰 Elements 객체를 반환하는 Method
 		return doc.select("ul.img_list dl dt a");
 	}
 	
 	public String getTitle(Element webToon){
-		// �쎒�댆�쓽 �젣紐⑹쓣 �뼸�뼱�궡�뒗 Method
+		// 웹툰의 제목을 얻어내는 Method
 		return webToon.toString().split("title=\"")[1].split("\">")[0];
 	}
 	
 	public String getURL(Element el){
-		// Elements 媛앹껜�뿉 ���븳 �븯�씠�띁留곹겕瑜� 諛섑솚�븯�뒗 Method
+		// Elements 객체에 대한 하이퍼링크를 반환하는 Method
 		return "http://comic.naver.com/" + el.attr("href");
 	}
 	
 	public String getRecentlyToon(Document doc){
-		// �빐�떦 �쎒�댆�쓽 理쒖떊�솕 �닔瑜� 異붿텧�븯�뒗 Method
+		// 해당 웹툰의 최신화 수를 추출하는 Method
 		Element el = doc.select("td.title a").get(0);
 		String detailUrl = getURL(el);
 		String recentlyToon = detailUrl.split("no=")[1].split("&")[0];
@@ -60,12 +60,12 @@ public class ParsingNaver {
 		String url = "http://comic.naver.com/webtoon/weekdayList.nhn?week=" + week[6];
 		ParsingNaver naverToon = new ParsingNaver();
 
-		// Naver WebToon Page�뿉 ���븳 Document 媛앹껜瑜� 諛섑솚諛쏄퀬 洹� 媛앹껜瑜� �씠�슜�븯�뿬 �빐�떦 �슂�씪�쓽 �쎒�댆 由ъ뒪�듃瑜� 諛섑솚 諛쏆쓬
+		// Naver WebToon Page에 대한 Document 객체를 반환받고 그 객체를 이용하여 해당 요일의 웹툰 리스트를 반환 받음
 		Elements webToonList = naverToon.getWebToonElements(naverToon.getDocument(url));
 		WebToonDTO dto;
 		WebToonDAO dao = new WebToonDAO();
 		int webToonCount = 0;
-		// 諛섑솚 諛쏆� 媛� �쎒�댆�뿉 ���븳 title, titleId, 理쒓렐 �솕 ���옣, ���몴 �씠誘몄�, 媛� �솕�쓽 �뜽�꽕�씪 url
+		// 반환 받은 각 웹툰에 대한 title, titleId, 최근 화 저장, 대표 이미지, 각 화의 썸네일 url
 		for(Element webToon : webToonList){
 			String wName =  naverToon.getTitle(webToon);
 			int titleId = Integer.parseInt(naverToon.getURL(webToon).split("titleId=")[1].split("&weekday")[0]);
@@ -79,8 +79,9 @@ public class ParsingNaver {
 			dao.insertOne(dto);*/
 			
 			System.out.println("INSERT INTO webtoon(wname, wimage, titleid, website, recentlyno, wgenre, imageurl, contenturl, week)");
-			System.out.println("VALUES('" + wName + "', '" + wImage + "', " + titleId + ", '" + webSite + "', " + recentlyNo + ", '�옣瑜�', '" + imageUrl +  "', '" + contentUrl + "', '" + week[6] + "');");
+			System.out.println("VALUES('" + wName + "', '" + wImage + "', " + titleId + ", '" + webSite + "', " + recentlyNo + ", '장르', '" + imageUrl +  "', '" + contentUrl + "', '" + week[6] + "');");
 			System.out.println();
+			
 		}	
 	}
 	
